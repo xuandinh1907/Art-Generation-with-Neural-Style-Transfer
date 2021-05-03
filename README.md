@@ -19,7 +19,6 @@ Following the [original NST paper](https://arxiv.org/abs/1508.06576), we will us
 
 We will build the Neural Style Transfer (NST) algorithm in three steps:
 
-- ![Build the content cost function](https://latex.codecogs.com/gif.latex?J_{content}(C,G))
 - Build the content cost function $J_{content}(C,G)$
 - Build the style cost function $J_{style}(S,G)$
 - Put it together to get $J(G) = \alpha J_{content}(C,G) + \beta J_{style}(S,G)$. 
