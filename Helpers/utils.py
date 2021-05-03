@@ -7,13 +7,15 @@ import matplotlib.pyplot as plt
 class Utilities():
 
     @staticmethod
-    def tensor_to_image(tensor):
+    def save_img(tensor, config):
         tensor = tensor*255
         tensor = np.array(tensor, dtype=np.uint8)
         if np.ndim(tensor)>3:
             assert tensor.shape[0] == 1
             tensor = tensor[0]
-        return PIL.Image.fromarray(tensor)
+        # return PIL.Image.fromarray(tensor)
+        im = PIL.Image.fromarray(tensor)
+        im.save(config.save_img_path + config.save_img_fn)
 
     @staticmethod
     def load_img(path_to_img):

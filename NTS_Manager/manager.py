@@ -80,12 +80,15 @@ class NTS_Manager():
                 step += 1
                 NTS_Manager.train_step(config, image, opt, extractor, style_targets, content_targets)
                 print(".", end='')
-            display.clear_output(wait=True)
-            display.display(Utilities.tensor_to_image(image))
+            # display.clear_output(wait=True)
+            # display.display(Utilities.tensor_to_image(image))
+            # print("================================================")
             print("Train step: {}".format(step))
         end = time.time()
         print("Total time: {:.1f}".format(end-start))
 
         Utilities.imshow(image, config.output_image_name)
         plt.show()
+        Utilities.save_img(image, config)
+        # plt.savefig(config.save_img_path + config.save_img_fn, dpi = 300)
 
